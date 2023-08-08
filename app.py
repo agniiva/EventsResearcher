@@ -154,8 +154,8 @@ system_message = SystemMessage(
             3/ If there are url of relevant links & articles, you will scrape it to gather more information
             4/ After scraping & search, you should think "is there any new things i should search & scraping based on the data I collected to increase content quality or add more FAQs?" If answer is yes, continue; But don't do this more than 3 iteratins
             5/ You should not make things up, you should only write facts & data that you have or gathered
-            6/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research
-            7/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research"""
+            6/ In the final output, You should include all the details in a Markdown format; You should include all the location, transport, venue details in a structured format
+            7/ In the final output, You should include all the details in a Markdown format; You should include all the location, transport, venue details in a structured format"""
 )
 
 agent_kwargs = {
@@ -163,7 +163,7 @@ agent_kwargs = {
     "system_message": system_message,
 }
 
-llm = ChatOpenAI(temperature=0.7, model="gpt-3.5-turbo-16k-0613")
+llm = ChatOpenAI(temperature=0.2, model="gpt-3.5-turbo-16k-0613")
 memory = ConversationSummaryBufferMemory(
     memory_key="memory", return_messages=True, llm=llm, max_token_limit=2000)
 
